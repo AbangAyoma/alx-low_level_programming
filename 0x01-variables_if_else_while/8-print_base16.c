@@ -6,9 +6,9 @@
  *  Return: The function returns 0
  */
 int main(void)
-{	
+{
 	int n, i, hex;
-		
+
 	n = 48;
 	for (i = 0; i <= 9; i++)
 	{

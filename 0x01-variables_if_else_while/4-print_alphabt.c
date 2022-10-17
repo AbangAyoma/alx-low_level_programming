@@ -1,4 +1,4 @@
-nclude <stdio.h>
+#include <stdio.h>
 
 /**
  *  main - This is the main function
@@ -8,9 +8,10 @@ nclude <stdio.h>
 int main(void)
 {
 	char c;
+
 	for (c = 'a'; c <= 'z'; c++)
 	{
-		if (c == 'e' || c == 'q')								
+		if (c == 'e' || c == 'q')
 			continue;
 		putchar(c);
 	}
