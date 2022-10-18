@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include "main.h"
 
 /**
  * main - c code runs from here
@@ -9,6 +9,12 @@
  */
 int main(void)
 {
-	printf("_putchar\n");
+	char c[8] = "_putchar";
+	int i;
+	for (i = 0; i < 8; i++)
+	{
+		_putchar (c[i]);
+	}
+	_putchar ('\n');
 	return (0);
 }
