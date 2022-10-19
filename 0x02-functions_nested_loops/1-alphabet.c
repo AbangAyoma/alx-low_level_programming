@@ -3,8 +3,6 @@
 /**
  * main - check the code
  *
- * print_alphabet - Print lowercase alphabets
- *
  * function print_alphabet :print alphabets
  *
  * print_alphabet - a function that prints the alphabet, in lowercase
