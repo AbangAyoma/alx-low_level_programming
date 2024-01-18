@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -9,7 +10,7 @@ int main(void)
 {
 	char c[sizeof(char) * 8] = "_putchar";
 	
-	for (int i; i = 0; i < 8; i++)
+	for (int i = 0; i < 8; i++)
 	{
 
 	putchar(c[i]);
