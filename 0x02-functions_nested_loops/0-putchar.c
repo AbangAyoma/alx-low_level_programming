@@ -1,18 +1,22 @@
 #include "main.h"
 
 /**
- *main - print a _putchar program
+ * main - print a _putchar program
  *
  * Return: Always (0)
  */
 int main(void)
 {
-	char c[8] = "_putchar";
 	int i;
+
+	char c[sizeof(char) * 8] = "_putchar";
+	
 	for (i = 0; i < 8; i++)
 	{
-		printf("%c%c%c%c%c%c%c%c",c[i]);
+
+	putchar(c[i]);
+
 	}
-	_putchar ('\n');
+	putchar('\n'); 
 	return (0);
 }
