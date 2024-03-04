@@ -1,6 +1,4 @@
--c *.c
-
-ar -rc liball.a *.oi#!/bin/bash
+#!/bin/bash
 
 gcc -c *.c
 
