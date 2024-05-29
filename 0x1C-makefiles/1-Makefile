@@ -1,6 +1,6 @@
-CC := gcc
-SRC := .c
 all: gcc
+CC = gcc
+SRC = .c
 gcc:
 	${CC} main${SRC} school${SRC} -o school
 
