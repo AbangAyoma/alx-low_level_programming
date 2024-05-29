@@ -1,6 +1,11 @@
-all: gcc
 CC = gcc
-SRC = .c
-gcc:
-	${CC} main${SRC} school${SRC} -o school
+
+SRC = main.c file1.c file2.c
+
+all: school
+
+school: $(SRC)
+	${CC} -o school ${SRC}
+clean:
+	rm -f school
 
