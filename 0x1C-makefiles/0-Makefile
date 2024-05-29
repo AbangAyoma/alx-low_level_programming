@@ -1,0 +1,9 @@
+all: school
+
+school: main.c file1.c file2.c
+	gcc -o school main.c file1.c file2.c
+
+clean:
+	@echo "cleaning ........"
+	rm -f school
+
