@@ -26,9 +26,9 @@ re: fclean all
 
 # Compile each .c file into a .o file
 main.o: main.c m.h
-	$(CC) -c main.c -o main.o $(CFLAGS)
+	$(CC) -c main.c $(CFLAGS)
 school.o: school.c m.h
-	$(CC) -c school.c -o school.o $(CFLAGS)
+	$(CC) -c school.c $(CFLAGS)
 
 # Ensure these rules are not treated as files
 .PHONY: all clean oclean fclean re
