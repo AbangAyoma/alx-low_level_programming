@@ -1,11 +1,10 @@
-NAME := school
-SRC := main.c school.c
-CC := gcc
-OBJ := $(CC:.c=.o)
-CFLAGS := -Wall -Werror -Wextra -pedantic
-# Default rule
+NAME = school
+SRC = main.c school.c
+CC = gcc
+OBJ = $(CC:.c=.o)
+CFLAGS = -Wall -Werror -Wextra -pedantic
+RM = rm -f
 all: $(NAME)
-RM:= rm -r
 # Rule to build the executable
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
