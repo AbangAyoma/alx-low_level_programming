@@ -1,7 +1,22 @@
-CC = gcc
-SRC = main.c school.c
-NAME =  school
+#
+CC = gcc 
+SRC = main.c file1.c file2.c
 
-all : gcc
-gcc : ${SRC} 
-	${CC}  -c -o ${OBJ} ${SRC} ${NAME}
+# Define the object files
+OBJ = $(SRC:.c=.o)
+
+NAME = school
+
+all: $(NAME)
+
+# Rule to build the executable
+$(NAME): $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
+
+# Pattern rule to build object files from source files
+%.o: %.c
+	$(CC) -c $< -o $@
+
+clean:
+	rm -f $(OBJ) $(NAME)
+
