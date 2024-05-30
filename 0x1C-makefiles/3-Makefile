@@ -1,0 +1,55 @@
+#all, clean, oclean, fclean, re
+   # all: builds your executable
+    #clean: deletes all Emacs and Vim temporary files along with the executable
+#    oclean: deletes the object files
+ #   fclean: deletes all Emacs and Vim temporary files, the executable, and the object files
+ #   re: forces recompilation of all source files
+
+
+#CC: the compiler to be used
+#CC = gcc
+#SRC = main.c school.c
+   # OBJ: the .o files
+  #  NAME: the name of the executable
+ #   RM: the program to delete files
+
+#The all rule should recompile only the updated source files
+#The clean, oclean, fclean, re rules should never fail
+#You are not allowed to have a list of all the .o files
+
+# Define the compiler
+CC = gcc
+
+# Define the source files
+SRC = main.c school.c
+
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+all: $(NAME)
+
+# Rule to build the executable
+$(NAME): $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
+
+# Pattern rule to build object files from source files
+%.o: %.c
+	$(CC) -c $< -o $@
+
+# Rule to delete all Emacs and Vim temporary files along with the executable
+clean:
+	$(RM) $(NAME) *~ \#*\#
+
+# Rule to delete the object files
+oclean:
+	$(RM) $(OBJ)
+
+# Rule to delete all Emacs and Vim temporary files, the executable, and the object files
+fclean: clean oclean
+
+# Rule to force recompilation of all source files
+re: fclean all
+
+# Ensure these rules are not treated as files
+.PHONY: all clean oclean fclean re
+
