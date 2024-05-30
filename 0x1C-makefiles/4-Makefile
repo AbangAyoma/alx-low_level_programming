@@ -1,7 +1,8 @@
 NAME = school
 SRC = main.c school.c
 CC = gcc
-OBJ = $(CC:.c=.o)
+#OBJ = $(CC:.c=.o)
+OBJ = main.o school.o
 CFLAGS = -Wall -Werror -Wextra -pedantic
 RM = rm -f
 all: $(NAME)
