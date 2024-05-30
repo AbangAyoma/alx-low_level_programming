@@ -1,0 +1,51 @@
+# Define the compiler and compiler flags
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Define the source files
+SRC = main.c school.c
+
+# Define the object files (pattern substitution)
+OBJ = $(SRC:.c=.o)
+
+# Define the executable name
+NAME = school
+
+# Default rule
+all: $(NAME)
+
+# Rule to build the executable
+$(NAME): $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
+
+# Check if header file exists
+$(OBJ): m.h
+
+# Rule to delete all Emacs and Vim temporary files along with the executable
+clean:
+	$(RM) $(NAME)
+	$(RM) *~ \#*\#
+
+# Rule to delete the object files
+oclean:
+	$(RM) $(OBJ)
+
+# Rule to delete all Emacs and Vim temporary files, the executable, and the object files
+fclean: clean oclean
+
+# Rule to force recompilation of all source files
+re: fclean all
+
+# Compile each .c file into a .o file
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+file1.o: file1.c
+	$(CC) -c file1.c -o file1.o $(CFLAGS)
+
+file2.o: file2.c
+	$(CC) -c file2.c -o file2.o $(CFLAGS)
+
+# Ensure these rules are not treated as files
+.PHONY: all clean oclean fclean re
+
